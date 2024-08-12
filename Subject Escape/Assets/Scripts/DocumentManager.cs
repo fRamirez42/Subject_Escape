@@ -16,8 +16,13 @@ public class DocumentManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (col.gameObject.tag == "Player") {
+        
+    }
+
+    void OnCollisionEnter(Collision col) {
+        if (col.gameObject.name == "Player") {
             PRender.enabled = false;
+            Debug.Log("Collision ye");
         }
     }
 }

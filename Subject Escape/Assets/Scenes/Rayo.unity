@@ -240,9 +240,10 @@ GameObject:
   - component: {fileID: 620904285}
   - component: {fileID: 620904284}
   - component: {fileID: 620904283}
+  - component: {fileID: 620904288}
   m_Layer: 0
   m_Name: Interactable
-  m_TagString: Untagged
+  m_TagString: Document
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,8 +285,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -355,6 +356,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &620904288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620904282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14107ee1fa81ac54997b7f478d7ac550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  documentstress: {fileID: 1207019411}
+  PRender: {fileID: 620904285}
 --- !u!1 &930549257
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +479,7 @@ GameObject:
   - component: {fileID: 1207019406}
   - component: {fileID: 1207019404}
   - component: {fileID: 1207019411}
+  - component: {fileID: 1207019412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -533,10 +549,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.7449484
+  m_Height: 2.3238592
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.1619296, z: -0.005068779}
 --- !u!23 &1207019408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -616,6 +632,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stressLevelPlayer: 0
+--- !u!64 &1207019412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207019403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1245538002
 GameObject:
   m_ObjectHideFlags: 0
