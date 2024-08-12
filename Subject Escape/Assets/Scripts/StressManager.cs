@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StressManager : MonoBehaviour
 {
-    public float stressLevelPlayer = 0f;
-    private float stressAddShooting = 5f;
-    private float stressAddHide = 1f;
-    private float stressAddRead = 2f;
+    public int stressLevelPlayer = 0;
+    private int stressAddShooting = 5;
+    private int stressAddHide = 1;
+    private int stressAddRead = 2;
+    public TextMeshProUGUI counter;
+
+    void Start() {
+        counter.text = "0";
+    }
 
     // Update is called once per frame
     void Update()
     {
+        counter.text = stressLevelPlayer.ToString();
+
         if (stressLevelPlayer > 100) { 
             //Allow monsters to roam ts
         }    
