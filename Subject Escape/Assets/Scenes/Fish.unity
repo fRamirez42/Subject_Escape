@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87e40a4feba7d640a3245395a5925b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   bulletPrefab: {fileID: 1231025767}
   bulletSpawn: {fileID: 0}
   bulletSpeed: 300
@@ -1141,6 +1142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287a46fa4b4ab3a46a2aa9f01138b716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1393556676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2953883443444644866, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
+  m_PrefabInstance: {fileID: 5381865794742763183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1798600134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1293,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4681656685383836629, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1393556676}
     - target: {fileID: 4681656685383836629, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
       propertyPath: bulletPrefab
       value: 

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
+
+    public GameObject Player;
     //prefab that will be used
     public GameObject bulletPrefab;
 
@@ -46,7 +48,7 @@ public class PlayerWeapon : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab);
 
         //ignore collision between bulletand player
-       
+        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), Player.GetComponent<Collider>());
         
         //set bullet position when spawned
         bullet.transform.position = bulletSpawn.position;
