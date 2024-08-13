@@ -8,5 +8,7 @@ public class BulletBehaviour : MonoBehaviour{
     private void OnCollisionEnter(Collision collision){
         //kill enemy when hit
         Destroy(gameObject);
+
+        Destroy(collision.gameObject);
     }
 }
