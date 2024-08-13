@@ -11,7 +11,7 @@ public class PlayerWeapon : MonoBehaviour
     public Transform bulletSpawn;
 
     //Set bullet speed
-    public float bulletSpeed = 30;
+    public float bulletSpeed = 1000;
 
     //set the time for which the bullet will exist
     public float lifeTime = 3;
