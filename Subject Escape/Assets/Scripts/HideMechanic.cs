@@ -40,6 +40,9 @@ public class HideMechanic : MonoBehaviour
                 // Set the active camera to the main display
                 cam2.GetComponent<Camera>().targetDisplay = 0;  // Assign to Display 1 (0 index)
                 Debug.Log("Player is now hiding under the bed");
+
+                //Add stress every second
+                InvokeRepeating("stressByTheSecond", 1f, 1f);
             }
             else
             {
@@ -53,6 +56,9 @@ public class HideMechanic : MonoBehaviour
                 // Set the active camera to the main display
                 cam1.GetComponent<Camera>().targetDisplay = 0;  // Assign to Display 1 (0 index)
                 Debug.Log("Player is no longer hiding under the bed");
+
+                //Stop the timer of stress
+                CancelInvoke("stressByTheSecond");
             }
         }
     }
@@ -89,6 +95,10 @@ public class HideMechanic : MonoBehaviour
 
             Debug.Log("Player exited bed collider");
         }
+    }
+
+    private void stressByTheSecond() {
+        sm.stressHiden();
     }
 
 }
