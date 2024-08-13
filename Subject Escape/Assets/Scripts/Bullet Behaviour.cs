@@ -5,10 +5,8 @@ using UnityEngine;
 public class BulletBehaviour : MonoBehaviour{
 
     //Start void when triggered
-    private void OnTriggerEnter(Collider other){
+    private void OnCollisionEnter(Collision collision){
         //kill enemy when hit
-        print("hit " + other.name + "!");
         Destroy(gameObject);
-        Destroy(other);
     }
 }
