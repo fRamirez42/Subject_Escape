@@ -873,6 +873,7 @@ GameObject:
   - component: {fileID: 1007965944}
   - component: {fileID: 1007965943}
   - component: {fileID: 1007965947}
+  - component: {fileID: 1007965948}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Hiding
@@ -1000,6 +1001,33 @@ MonoBehaviour:
   PRender: {fileID: 1207019408}
   cam1: {fileID: 1245538004}
   cam2: {fileID: 370608392}
+--- !u!54 &1007965948
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007965942}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1031706446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,8 +1172,6 @@ MonoBehaviour:
   runSpeed: 10
   mouseSensitivity: 200
   playerCamera: {fileID: 1245538005}
-  cam1: {fileID: 1245538004}
-  cam2: {fileID: 370608392}
 --- !u!54 &1207019406
 Rigidbody:
   m_ObjectHideFlags: 0
