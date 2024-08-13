@@ -13,11 +13,16 @@ public class Movement : MonoBehaviour
     private Vector3 moveDirection;     // Movement direction
     private float xRotation = 0f;      // Vertical rotation of the camera
 
+    public Camera cam1;
+    public Camera cam2;
+
     // Start is called before the first frame update
     void Start()
     {
         // Lock the cursor to the center of the screen
         Cursor.lockState = CursorLockMode.Locked;
+        cam1.enabled = true;
+        cam2.enabled = false;
     }
 
     // Update is called once per frame
