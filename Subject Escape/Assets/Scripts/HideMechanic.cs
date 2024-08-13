@@ -4,64 +4,67 @@ using UnityEngine;
 
 public class HideMechanic : MonoBehaviour
 {
-    public StressManager documentstress;
-    public Movement move;
+    public StressManager sm;
+    public GameObject cam1;
+    public GameObject cam2;
     public MeshRenderer PRender;
+    public GameObject bedCollider;  // The collider associated with the bed
+
     private bool isPlayerInCollider = false;
-    private bool isPlayerHiding = false;
+    private bool isHiding = false;
 
-    public Camera cam1;
-    public Camera cam2;
-
-    // Start is called before the first frame update
     void Start()
     {
-        PRender.enabled = true;
-
-        cam1.enabled = true;
-        cam2.enabled = false;
-
-        isPlayerHiding = false;
+        cam1.SetActive(true);
+        cam2.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check if the 'E' key is pressed, the player is in the collider, and the player is not already hiding
-        if (isPlayerInCollider && Input.GetKeyDown(KeyCode.E) && !isPlayerHiding)
+
+        // Check if the 'E' key is pressed and the player is in the collider
+        if (isPlayerInCollider && Input.GetKeyDown(KeyCode.E))
         {
-            documentstress.flashbackReading();
+            // Toggle hiding state
+            isHiding = !isHiding;
 
-            cam1.enabled = false;
-            cam2.enabled = true;
+            if (isHiding)
+            {
+                // Disable the MeshRenderer to hide the player
+                PRender.enabled = false;
 
-            // Disable the MeshRenderer
-            PRender.enabled = false;
-            Debug.Log("E key pressed while in collider, MeshRenderer disabled");
+                // Switch camera views
+                cam1.SetActive(false);
+                cam2.SetActive(true);
 
-            isPlayerHiding = true;
-        }
-        // Optionally, you might want to allow the player to exit hiding by pressing 'E' again
-        else if (isPlayerHiding && Input.GetKeyDown(KeyCode.E))
-        {
-            cam1.enabled = true;
-            cam2.enabled = false;
+                // Set the active camera to the main display
+                cam2.GetComponent<Camera>().targetDisplay = 0;  // Assign to Display 1 (0 index)
+                Debug.Log("Player is now hiding under the bed");
+            }
+            else
+            {
+                // Re-enable the MeshRenderer to show the player
+                PRender.enabled = true;
 
-            // Re-enable the MeshRenderer if needed
-            PRender.enabled = true;
-            Debug.Log("E key pressed again, exiting hiding");
+                // Switch back the camera views
+                cam1.SetActive(true);
+                cam2.SetActive(false);
 
-            isPlayerHiding = false;
+                // Set the active camera to the main display
+                cam1.GetComponent<Camera>().targetDisplay = 0;  // Assign to Display 1 (0 index)
+                Debug.Log("Player is no longer hiding under the bed");
+            }
         }
     }
 
 
+    // Called when the player enters the collider
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Player")
         {
             isPlayerInCollider = true;
-            Debug.Log("Player entered collider");
+            Debug.Log("Player entered bed collider");
         }
     }
 
@@ -71,7 +74,21 @@ public class HideMechanic : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             isPlayerInCollider = false;
-            Debug.Log("Player exited collider");
+
+            // Ensure the player is not hiding when they leave the collider
+            if (isHiding)
+            {
+                // Re-enable the MeshRenderer and switch camera views back
+                PRender.enabled = true;
+                cam1.SetActive(true);
+                cam2.SetActive(false);
+
+                isHiding = false;
+                Debug.Log("Player exited collider and is no longer hiding");
+            }
+
+            Debug.Log("Player exited bed collider");
         }
     }
+
 }

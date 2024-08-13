@@ -996,11 +996,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f77f5a4a1a95a046a508d30575d0dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  documentstress: {fileID: 1207019411}
-  move: {fileID: 0}
+  sm: {fileID: 1207019411}
+  cam1: {fileID: 1245538002}
+  cam2: {fileID: 370608390}
   PRender: {fileID: 1207019408}
-  cam1: {fileID: 1245538004}
-  cam2: {fileID: 370608392}
+  bedCollider: {fileID: 0}
 --- !u!54 &1007965948
 Rigidbody:
   m_ObjectHideFlags: 0
