@@ -15,6 +15,13 @@ public class PlayerWeapon : MonoBehaviour
 
     //set the time for which the bullet will exist
     public float lifeTime = 3;
+
+    //create can shoot boolean
+    public bool canShoot = true;
+
+    //set time between shots
+    public float shotDelayInSeconds = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +38,14 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     private void Fire(){
+
+        if (canShoot == true){
         //create an instance of the bullet
         GameObject bullet = Instantiate(bulletPrefab);
 
-        //Ignore collision between bullet and gun
+        //ignore collision between bulletand player
         
-
+        
         //set bullet position when spawned
         bullet.transform.position = bulletSpawn.position;
 
@@ -48,7 +57,15 @@ public class PlayerWeapon : MonoBehaviour
         //assign speed to bullet
         bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
 
+        //start timer to delete bullet after 3 seconds
         StartCoroutine(DestroyBulletAfterTime(bullet, lifeTime));
+
+        //prevent next shot
+        canShoot = false;
+        
+        //call function to delay next shot
+        StartCoroutine(ShootDelay());
+        }
     }
     private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay){
         //wait for delay time to pass
@@ -57,4 +74,11 @@ public class PlayerWeapon : MonoBehaviour
         //destroy the bullet object
         Destroy(bullet);
     }
+
+    //Delay next shot
+    private IEnumerator ShootDelay()
+  {
+    yield return new WaitForSeconds(shotDelayInSeconds);
+    canShoot = true;
+  }
 }
