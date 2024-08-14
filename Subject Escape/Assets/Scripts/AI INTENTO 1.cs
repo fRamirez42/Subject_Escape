@@ -5,6 +5,25 @@ using UnityEngine.AI;
 
 public class AIintento1 : MonoBehaviour
 {
+    public GameObject bulletPrefab;
+
+    //Spawn in the bullet
+    public Transform bulletSpawn;
+
+    //Set bullet speed
+    public float bulletSpeed = 1000;
+
+    //set the time for which the bullet will exist
+    public float lifeTime = 3;
+
+    //create can shoot boolean
+    public bool canShoot = true;
+
+    //set the shot delay
+    public float shotDelayInSeconds = 1;
+
+    public GameObject myself;
+
     public NavMeshAgent agent;
 
     public Transform player;
@@ -84,7 +103,7 @@ public class AIintento1 : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-
+            Fire();
             ///End of attack code
 
             alreadyAttacked = true;
@@ -94,5 +113,53 @@ public class AIintento1 : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    //delay in shot by AI
+    private IEnumerator ShootDelay()
+    {
+    yield return new WaitForSeconds(shotDelayInSeconds);
+    canShoot = true;
+    }
+
+    //Destroy bullet after 3 seconds
+    private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay){
+        //wait for delay time to pass
+        yield return new WaitForSeconds(delay);
+
+        //destroy the bullet object
+        Destroy(bullet);
+    }
+
+    //Fire bullet function
+    private void Fire(){
+        
+        if (canShoot == true){;
+        //create an instance of the bullet
+        GameObject bullet = Instantiate(bulletPrefab);
+
+        //ignore collision between bulletand player
+        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), myself.GetComponent<Collider>());
+        
+        //set bullet position when spawned
+        bullet.transform.position = bulletSpawn.position;
+
+        //angle for bullet at spawn
+        Vector3 rotation = bullet.transform.rotation.eulerAngles;
+
+        bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+
+        //assign speed to bullet
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward * bulletSpeed, ForceMode.Impulse);
+
+        //start timer to delete bullet after 3 seconds
+        StartCoroutine(DestroyBulletAfterTime(bullet, lifeTime));
+
+        //prevent next shot
+        canShoot = false;
+        
+        //call function to delay next shot
+        StartCoroutine(ShootDelay());
+        }
     }
 }

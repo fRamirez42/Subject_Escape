@@ -575,7 +575,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!136 &1845626417
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -803,6 +803,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a718d175187b9774886c815bdb974876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 6856274463271423313, guid: 2d95685ea6a78c64988f46099e7b735d, type: 3}
+  bulletSpawn: {fileID: 2044976490}
+  bulletSpeed: 1000
+  lifeTime: 3
+  canShoot: 1
+  shotDelayInSeconds: 1
+  myself: {fileID: 2044976484}
   agent: {fileID: 2044976486}
   player: {fileID: 1845626420}
   whatIsGround:
