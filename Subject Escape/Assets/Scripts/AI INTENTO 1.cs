@@ -40,7 +40,6 @@ public class AIintento1 : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    public GameObject projectile;
 
     //States
     public float sightRange, attackRange;
@@ -110,8 +109,9 @@ public class AIintento1 : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
-    private void ResetAttack()
+    private IEnumerator ResetAttack()
     {
+        yield return new WaitForSeconds(shotDelayInSeconds);
         alreadyAttacked = false;
     }
 

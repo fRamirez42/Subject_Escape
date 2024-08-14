@@ -546,7 +546,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &1845626416
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 2044976486}
   - component: {fileID: 2044976485}
   m_Layer: 0
-  m_Name: ENEMY 1
+  m_Name: Enemy 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a718d175187b9774886c815bdb974876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6856274463271423313, guid: 2d95685ea6a78c64988f46099e7b735d, type: 3}
+  bulletPrefab: {fileID: 6856274463271423313, guid: fc69f5d35822bce4e915eb5603a69d67, type: 3}
   bulletSpawn: {fileID: 2044976490}
   bulletSpeed: 1000
   lifeTime: 3
@@ -822,7 +822,6 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 7
   timeBetweenAttacks: 0.5
-  projectile: {fileID: 0}
   sightRange: 5
   attackRange: 2
   playerInSightRange: 0
