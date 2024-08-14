@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 197095020}
   - component: {fileID: 197095019}
   m_Layer: 0
-  m_Name: Very cool enemy
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  bulletPrefab: {fileID: 1231025767}
+  bulletPrefab: {fileID: 0}
   bulletSpawn: {fileID: 0}
   bulletSpeed: 300
   lifeTime: 3
@@ -1300,7 +1300,7 @@ PrefabInstance:
     - target: {fileID: 4681656685383836629, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 1231025767}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
