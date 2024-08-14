@@ -9,6 +9,8 @@ public class BulletBehaviour : MonoBehaviour{
         //kill enemy when hit
         Destroy(gameObject);
 
+        if(collision.gameObject.name.Contains("Enemy")){
         Destroy(collision.gameObject);
+        }
     }
 }
