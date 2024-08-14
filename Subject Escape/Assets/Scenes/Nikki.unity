@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7963451572220238332, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
       propertyPath: m_Constraints
-      value: 116
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 7963451572220238332, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
       propertyPath: m_CollisionDetection

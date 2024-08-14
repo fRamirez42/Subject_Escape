@@ -102,16 +102,16 @@ public class AIintento1 : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Fire();
+            Invoke(nameof(Fire), shotDelayInSeconds);
             ///End of attack code
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
-    private IEnumerator ResetAttack()
+
+    private void ResetAttack()
     {
-        yield return new WaitForSeconds(shotDelayInSeconds);
         alreadyAttacked = false;
     }
 
