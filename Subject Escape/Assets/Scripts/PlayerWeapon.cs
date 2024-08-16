@@ -26,6 +26,9 @@ public class PlayerWeapon : MonoBehaviour
     //set time between shots
     public float shotDelayInSeconds = 1;
 
+    //StressManager to add stress when shooting
+    public StressManager sm;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class PlayerWeapon : MonoBehaviour
         //check if left click is pressed
         if (Input.GetKeyDown(KeyCode.Mouse0)){
             Fire();
+            sm.playerShoots();
         }
     }
 
