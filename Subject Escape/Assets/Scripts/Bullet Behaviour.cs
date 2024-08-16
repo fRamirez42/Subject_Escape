@@ -9,7 +9,7 @@ public class BulletBehaviour : MonoBehaviour{
         //kill enemy when hit
         Destroy(gameObject);
 
-        if(collision.gameObject.name.Contains("Enemy")){
+        if(collision.gameObject.tag == "Enemy"){
         Destroy(collision.gameObject);
         }
     }

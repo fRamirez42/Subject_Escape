@@ -8,6 +8,9 @@ TagManager:
   - Hiding
   - Floor
   - Explosion
+  - Enemy
+  - Enemy Projectile
+  - Player Projectile
   layers:
   - Default
   - TransparentFX
