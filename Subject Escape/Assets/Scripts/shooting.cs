@@ -20,11 +20,11 @@ public class shooting : MonoBehaviour
     {
         RaycastHit hit;
 
-        Vector3 rotation = Camera.transform.rotation.eulerAngles;
+        Vector3 Aim = Camera.transform.rotation.eulerAngles;
 
-        if(Physics.Raycast(FirePoint.position , transform.TransformDirection(rotation) , out hit , 100))
+        if(Physics.Raycast(FirePoint.position , FirePoint.forward , out hit , 100))
         {
-            Debug.DrawRay(FirePoint.position, transform.TransformDirection(rotation) * hit.distance, Color.red);
+            Debug.DrawRay(FirePoint.position, FirePoint.forward * hit.distance, Color.red);
         }
     }
 }
