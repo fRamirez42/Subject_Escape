@@ -12,8 +12,6 @@ public class Movement : MonoBehaviour
     private float currentSpeed;        // Current movement speed
     private Vector3 moveDirection;     // Movement direction
     private float xRotation = 0f;      // Vertical rotation of the camera
-    private float maxSpeed = 10f;
-    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +55,5 @@ public class Movement : MonoBehaviour
 
         // Move the player
         transform.position += moveDirection * currentSpeed * Time.deltaTime;
-
-        // Cap speed of player
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-        }
     }
 }
