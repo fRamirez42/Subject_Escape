@@ -10,8 +10,5 @@ public class EnemyBulletBehaviour : MonoBehaviour{
         Destroy(gameObject);
 
         //Destroy player when player is hit
-        if(collision.gameObject.name.Contains("Player")){
-        Destroy(collision.gameObject);
-        }
     }
 }
