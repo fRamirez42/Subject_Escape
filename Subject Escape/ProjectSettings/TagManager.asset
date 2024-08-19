@@ -4,13 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Document
-  - Hiding
-  - Floor
-  - Explosion
-  - Enemy
-  - Enemy Projectile
-  - Player Projectile
+  - Wall
+  - Metal
+  - Blood
+  - Dirt
+  - Concrete
+  - ExplosiveBarrel
+  - Target
+  - GasTank
+  - Metal (Static)
+  - Wood (Static)
+  - Dirt (Static)
+  - Wood
   layers:
   - Default
   - TransparentFX
@@ -18,16 +23,16 @@ TagManager:
   - 
   - Water
   - UI
-  - whatIsPlayer
-  - whatIsGround
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - First Person View
+  - Character
+  - Post Processing
+  - Post Processing Weapon
+  - Post Processing Scope
+  - Invisible Wall
+  - Projectile
   - 
   - 
   - 
