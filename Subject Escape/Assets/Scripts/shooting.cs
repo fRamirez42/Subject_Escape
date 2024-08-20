@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class shooting : MonoBehaviour
 {
-   public GameObject Player;
+    public GameObject Player;
 
-   public Transform FirePoint;
+    public Transform FirePoint;
 
-   public Transform Camera;
+    public Transform Camera;
 
     // Update is called once per frame
     void Update()
     {
-        Shooting();
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Shooting();
+        }
     }
 
     public void Shooting()
@@ -22,7 +25,7 @@ public class shooting : MonoBehaviour
 
         Vector3 Aim = Camera.transform.rotation.eulerAngles;
 
-        if(Physics.Raycast(FirePoint.position , FirePoint.forward , out hit , 100))
+        if (Physics.Raycast(FirePoint.position, FirePoint.forward, out hit, 100))
         {
             Debug.DrawRay(FirePoint.position, FirePoint.forward * hit.distance, Color.red);
         }
