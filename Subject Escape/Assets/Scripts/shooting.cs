@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     public Transform FirePoint;
 
     public Transform Camera;
+    
 
     // Update is called once per frame
     void Update()
@@ -27,6 +28,10 @@ public class shooting : MonoBehaviour
 
         if (Physics.Raycast(FirePoint.position, FirePoint.forward, out hit, 100))
         {
+            GameObject target = hit.transform.gameObject;
+            if(target.tag.Contains("Enemy")){
+                Destroy(target);
+            }
             Debug.DrawRay(FirePoint.position, FirePoint.forward * hit.distance, Color.red);
         }
     }
