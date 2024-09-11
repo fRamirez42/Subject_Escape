@@ -418,7 +418,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -735,6 +735,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1228025299}
   Health: 100
+--- !u!114 &1228025302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228025299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f7d4a4cd337414a97bf1029cafa2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1228025299}
+  health: {fileID: 0}
 --- !u!1 &1378182497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1078,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1228025301}
+    - targetCorrespondingSourceObject: {fileID: 2953883443444644866, guid: 1f5dceff0db36ef40bb1a4b97df35a07,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1228025302}
   m_SourcePrefab: {fileID: 100100000, guid: 1f5dceff0db36ef40bb1a4b97df35a07, type: 3}
 --- !u!1 &1733471910
 GameObject:
